@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forum Soft Blue - Register</title>
+  <title>Forum Soft Blue - Login</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -14,42 +14,50 @@
       <div class="nav-links">
         <a href="index.html">Beranda</a>
         <a href="forum.html">Forum</a>
-       </div>
+        <a href="register.html">Register</a>
+      </div>
     </nav>
 
     <div class="container">
-        <h1>Buat Akun Baru</h1>
+        <h1>Masuk ke Akun Anda</h1>
         
         <!-- Message containers -->
         <div id="error-message" class="error-message" style="display: none;"></div>
         <div id="success-message" class="success-message" style="display: none;"></div>
         
-        <form id="register-form" novalidate>
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required 
-                       minlength="3" aria-describedby="username-help" autocomplete="username">
-                <small id="username-help" class="form-text">Minimal 3 karakter</small>
-            </div>
+        <form id="login-form" novalidate>
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required 
-                       aria-describedby="email-help" autocomplete="email">
-                <small id="email-help" class="form-text">Gunakan email yang valid</small>
+                       aria-describedby="email-help" autocomplete="email"
+                       placeholder="Masukkan email Anda">
+                <small id="email-help" class="form-text">Gunakan email yang sama saat registrasi</small>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required 
-                       minlength="6" aria-describedby="password-help" autocomplete="new-password">
+                       minlength="6" aria-describedby="password-help" autocomplete="current-password"
+                       placeholder="Masukkan password Anda">
                 <small id="password-help" class="form-text">Minimal 6 karakter</small>
             </div>
-            <button type="submit">Daftar</button>
+            
+            <!-- Loading indicator -->
+            <div id="loading-indicator" class="loading" style="display: none;">
+                <span>Sedang memproses...</span>
+            </div>
+            
+            <button type="submit" id="login-button">Masuk</button>
         </form>
-        <p>Sudah punya akun? <a href="login.html">Login di sini</a></p>
+        
+        <div class="form-links">
+            <p>Belum punya akun? <a href="register.html">Daftar di sini</a></p>
+            <p><a href="forgot-password.html">Lupa password?</a></p>
+        </div>
     </div>
     
     <!-- Fixed Supabase CDN -->
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="js/auth.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
