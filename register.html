@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forum Soft Blue - Register</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigasi -->
+    <nav>
+      <div class="nav-logo">Forum</div>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="forum.html">Forum</a>
+       </div>
+    </nav>
+
+    <div class="container">
+        <h1>Buat Akun Baru</h1>
+        
+        <!-- Message containers -->
+        <div id="error-message" class="error-message" style="display: none;"></div>
+        <div id="success-message" class="success-message" style="display: none;"></div>
+        
+        <form id="register-form" novalidate>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required 
+                       minlength="3" aria-describedby="username-help" autocomplete="username">
+                <small id="username-help" class="form-text">Minimal 3 karakter</small>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required 
+                       aria-describedby="email-help" autocomplete="email">
+                <small id="email-help" class="form-text">Gunakan email yang valid</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required 
+                       minlength="6" aria-describedby="password-help" autocomplete="new-password">
+                <small id="password-help" class="form-text">Minimal 6 karakter</small>
+            </div>
+            <button type="submit">Daftar</button>
+        </form>
+        <p>Sudah punya akun? <a href="login.html">Login di sini</a></p>
+    </div>
+    
+    <!-- Fixed Supabase CDN -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
