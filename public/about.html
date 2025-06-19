@@ -13,10 +13,9 @@
     <header>
         <h1>About Our Web Forum</h1>
         <nav>
-          <div class="nav-logo">Forum</div>
+          <a class="nav-logo" href="index.html">Foruward</a>
           <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
           <div class="nav-links">
-            <a href="index.html">Beranda</a>
             <a href="forum.html">Forum</a>
            </div>
           <div class="profile-menu">
@@ -33,26 +32,70 @@
               <a href="#">Achievment</a>
               <a href="login.html">Login</a>
               <a href="register.html">Register</a>
+              <a href="#" id="logout-link">Logout</a>
             </div>
           </div>
         </nav>
     </header>
     <main>
       <div class="container">
-        <section>
-            <h2>Welcome to Our Forum</h2>
-            <p>This forum is a place for users to discuss various topics, share ideas, and connect with others who have similar interests.</p>
-            <h3>Our Purpose</h3>
-            <p>We aim to create a friendly and inclusive environment where everyone can participate and contribute to discussions.</p>
-            <h3>Features</h3>
-            <ul>
-                <li>Discussion threads on various topics</li>
-                <li>User accounts for personalized experiences</li>
-                <li>Ability to create and reply to posts</li>
-                <li>Moderation to ensure a respectful community</li>
-            </ul>
-            <h3>Get Involved</h3>
-            <p>Join us by registering for an account and start participating in discussions today!</p>
+        <!-- Welcome Section -->
+        <section class="hero">
+          <h2>Selamat Datang di Foruward</h2>
+          <p>Foruward adalah forum komunitas interaktif yang menyediakan sistem reward, XP, dan achievement untuk setiap aktivitas Anda. Temukan berbagai topik menarik, raih pencapaian, dan tingkatkan level Anda bersama komunitas yang aktif dan ramah.</p>
+        </section>
+
+
+
+        <!-- Fitur Utama -->
+        <section class="features">
+          <h3>Fitur Utama Foruward</h3>
+          <ul class="feature-list">
+            <li>Reward & XP untuk setiap aktivitas forum</li>
+            <li>Achievement & badge eksklusif untuk pencapaian tertentu</li>
+            <li>Misi harian yang menantang dan seru</li>
+            <li>Level dan ranking anggota</li>
+            <li>Komunitas aktif, ramah, dan suportif</li>
+          </ul>
+        </section>
+
+        <!-- Topik/Diskusi Terbaru -->
+        <section class="latest-topics">
+          <h3>Diskusi Terbaru</h3>
+          <ul>
+            <li><a href="post.html">Bagaimana cara mendapatkan XP lebih cepat?</a> <span class="topic-meta">oleh User1 • 2 jam lalu</span></li>
+            <li><a href="post.html">Tips membuat postingan menarik</a> <span class="topic-meta">oleh User2 • 5 jam lalu</span></li>
+            <li><a href="post.html">Apa manfaat badge di Foruward?</a> <span class="topic-meta">oleh User3 • 1 hari lalu</span></li>
+          </ul>
+          <a href="forum.html" class="btn-secondary">Lihat Semua Diskusi</a>
+        </section>
+
+        <!-- Kategori Forum -->
+        <section class="categories">
+          <h3>Kategori Populer</h3>
+          <div class="category-list">
+            <div class="category-item">Teknologi</div>
+            <div class="category-item">Hiburan</div>
+            <div class="category-item">Edukasi</div>
+            <div class="category-item">Umum</div>
+          </div>
+        </section>
+
+        <!-- Misi Harian -->
+        <section class="missions">
+          <h3>Misi Harian</h3>
+          <ul id="missions-list">
+            <li>Login hari ini</li>
+            <li>Buat 1 postingan</li>
+            <li>Balas 3 diskusi</li>
+          </ul>
+        </section>
+
+        <!-- Testimoni Pengguna -->
+        <section class="testimonials">
+          <h3>Apa Kata Mereka?</h3>
+          <blockquote>"Foruward bikin diskusi makin seru dan produktif!" <span>- User Aktif</span></blockquote>
+          <blockquote>"Suka banget sama sistem reward dan badge-nya!" <span>- Member Baru</span></blockquote>
         </section>
       </div>
     </main>

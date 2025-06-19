@@ -1,71 +1,184 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Foruward - Forum Reward</title>
-  <meta name="description" content="Platform forum interaktif dengan sistem reward dan pencapaian. Bergabunglah dalam diskusi, dapatkan XP, dan raih berbagai achievement menarik!">
-  <meta name="keywords" content="forum, reward, achievement, diskusi, komunitas, XP, level, badge">
-  <meta name="author" content="Foruward Team">
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foruward - Forum Reward</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to the Web Forum</h1>
-        <!-- Contoh di semua file HTML -->
-        <nav>
-          <div class="nav-logo">Forum</div>
-          <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-          <div class="nav-links">
-            <a href="index.html">Beranda</a>
-            <a href="forum.html">Forum</a>
-            <a href="about.html">About</a>    
+    <!-- Header Sticky -->
+    <header class="main-header">
+        <div class="header-left">
+            <a href="index.html" class="nav-logo">Foruward</a>
         </div>
-          <div class="profile-menu">
-            <button class="profile-icon" aria-label="Profil">
-              <!-- SVG user icon -->
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="8" r="4" stroke="#3a7bd5" stroke-width="2"/>
-                <path d="M4 20c0-3.3137 3.134-6 7-6s7 2.6863 7 6" stroke="#3a7bd5" stroke-width="2"/>
-              </svg>
-            </button>
-            <div class="profile-dropdown">
-              <a href="profile.html">Profil</a>
-              <a href="#">Pengaturan</a>
-              <a href="achievment.html">Achievment</a>
-              <a href="login.html">Login</a>
-              <a href="register.html">Register</a>
+        <div class="header-center">
+            <input type="text" class="search-bar" placeholder="Cari topik, user, atau konten...">
+        </div>
+        <div class="header-right">
+            <div class="profile-menu">
+                <button class="profile-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </button>
+                <div class="profile-dropdown">
+                    <a href="profile.html">Profil</a>
+                    <a href="settings.html">Pengaturan</a>
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
             </div>
-          </div>
-        </nav>
+        </div>
     </header>
-    <main>
-  <div class="container">
-    <section>
-      <h2>Overview</h2>
-      <p>Welcome to our community forum where you can discuss various topics, share ideas, and connect with others.</p>
-    </section>
-    <section>
-      <h2>Latest Discussions</h2>
-      <ul>
-        <li><a href="post.html">Discussion Topic 1</a></li>
-        <li><a href="post.html">Discussion Topic 2</a></li>
-        <li><a href="post.html">Discussion Topic 3</a></li>
-      </ul>
-    </section>
-    <!-- Misi Harian -->
-    <section class="missions">
-      <h2>Misi Harian</h2>
-      <ul id="missions-list">
-        <!-- Daftar misi akan diisi oleh JavaScript -->
-      </ul>
-    </section>
-  </div>
-</main>
-    <footer>
-        <p>&copy; 2023 Web Forum. All rights reserved.</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+    <!-- Layout 3 Kolom -->
+    <div class="main-layout">
+        <!-- Sidebar Kiri (Sticky) -->
+        <aside class="sidebar-left">
+            <div class="nav-menu">
+                <h3>Navigasi</h3>
+                <ul>
+                    <li><a href="index.html">🏠 Home</a></li>
+                    <li>
+                        <button class="dropdown-toggle" aria-expanded="false">
+                            📁 Kategori
+                        </button>
+                        <ul class="category-list" id="categoryDropdown" hidden>
+                            <li><a href="#game">🎮 Game</a></li>
+                            <li><a href="#tutorial">📚 Tutorial</a></li>
+                            <li><a href="#diskusi">💬 Diskusi</a></li>
+                            <li><a href="#review">⭐ Review</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="leaderboard.html">🏆 Leaderboard</a></li>
+                    <li><a href="missions.html">🎯 Misi</a></li>
+                    <li><a href="profile.html">👤 Profil</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Konten Utama -->
+        <main class="content">
+            <h2>Forum Populer</h2>
+            
+            <!-- Daftar Post dalam Format Row -->
+            <div class="post-list-wrapper">
+                <!-- Post 1 -->
+                <div class="post-row">
+                    <div class="post-avatar">
+                        <img src="https://via.placeholder.com/40" alt="Avatar">
+                    </div>
+                    <div class="post-main">
+                        <a href="#" class="post-title">Coconut Monkey Cornerclub</a>
+                        <div class="post-meta">
+                            <span>Frindis</span>
+                            <span>•</span>
+                            <span>Aug 27, 2020</span>
+                            <div class="post-tags">
+                                <span class="tag">Game</span>
+                                <span class="tag">Discussion</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-stats">
+                        <div>Replies: <span class="stat-num">3K</span></div>
+                        <div>Views: <span class="stat-num">295K</span></div>
+                    </div>
+                    <div class="post-last">
+                        <div class="last-time">36 minutes ago</div>
+                        <div class="last-user">
+                            <img src="https://via.placeholder.com/28" alt="Last User" class="last-avatar">
+                            <span>Pifanjr</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="post-row">
+                    <div class="post-avatar">
+                        <img src="https://via.placeholder.com/40" alt="Avatar">
+                    </div>
+                    <div class="post-main">
+                        <a href="#" class="post-title">Street Fighter 6 – The Next Evolution of Fighting Games</a>
+                        <div class="post-meta">
+                            <span>shakeneko</span>
+                            <span>•</span>
+                            <span>41 minutes ago</span>
+                            <div class="post-tags">
+                                <span class="tag">Game</span>
+                                <span class="tag">Review</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-stats">
+                        <div>Replies: <span class="stat-num">0</span></div>
+                        <div>Views: <span class="stat-num">7</span></div>
+                    </div>
+                    <div class="post-last">
+                        <div class="last-time">41 minutes ago</div>
+                        <div class="last-user">
+                            <img src="https://via.placeholder.com/28" alt="Last User" class="last-avatar">
+                            <span>shakeneko</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="post-row">
+                    <div class="post-avatar">
+                        <img src="https://via.placeholder.com/40" alt="Avatar">
+                    </div>
+                    <div class="post-main">
+                        <a href="#" class="post-title">June 2025 General Game Discussion Thread</a>
+                        <div class="post-meta">
+                            <span>Zed Clampet</span>
+                            <span>•</span>
+                            <span>May 31, 2025</span>
+                            <div class="post-tags">
+                                <span class="tag">Discussion</span>
+                                <span class="tag">Monthly</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-stats">
+                        <div>Replies: <span class="stat-num">173</span></div>
+                        <div>Views: <span class="stat-num">4K</span></div>
+                    </div>
+                    <div class="post-last">
+                        <div class="last-time">Yesterday at 9:58 PM</div>
+                        <div class="last-user">
+                            <img src="https://via.placeholder.com/28" alt="Last User" class="last-avatar">
+                            <span>Zloth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar Kanan -->
+        <aside class="sidebar-right">
+            <div class="notifications">
+                <h3>Pembaruan & Notifikasi</h3>
+                <ul>
+                    <li>Ada pengumuman baru di forum!</li>
+                    <li>Selamat datang member baru!</li>
+                    <li>Event mingguan dimulai!</li>
+                    <li>Update fitur terbaru tersedia</li>
+                </ul>
+            </div>
+
+            <div class="nav-menu">
+                <h3>Statistik</h3>
+                <ul>
+                    <li>👥 Total Member: 1,234</li>
+                    <li>📝 Total Post: 5,678</li>
+                    <li>💬 Post Hari Ini: 23</li>
+                    <li>🔥 Member Online: 45</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
     <script src="js/main.js"></script>
 </body>
 </html>

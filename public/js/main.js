@@ -150,4 +150,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('missions-list')) {
         renderMissions();
     }
+
+    var dropdownBtn = document.querySelector('.dropdown-toggle');
+    var dropdownList = document.getElementById('categoryDropdown');
+    if (dropdownBtn && dropdownList) {
+        dropdownBtn.addEventListener('click', function() {
+            var expanded = dropdownBtn.getAttribute('aria-expanded') === 'true';
+            dropdownBtn.setAttribute('aria-expanded', !expanded);
+            dropdownList.hidden = expanded;
+        });
+    }
 });
